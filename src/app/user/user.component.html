@@ -1,0 +1,43 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createRequestModal">
+        New request
+    </button>
+</div>
+
+
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4" *ngFor="let cat of category">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-3" style="text-align:right">
+                        <i class="fas fa-2x text-gray-300" [ngClass]="cat.icon"></i>
+                    </div>
+                    <div class="col-8 mr-2" style="text-align:right">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            {{cat.name }} </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="" data-toggle="modal" data-target="#createRequestModal">
+                    View
+                </a> |
+                <a href="" data-toggle="modal" data-target="#createRequestModal">
+                    New request
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-12 col-lg-7">
+        <app-list-request [requestList]="requestList"></app-list-request>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="createRequestModal">
+    <app-create-request (requestSaved)="requestSaved()"></app-create-request>
+</div>
