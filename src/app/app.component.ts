@@ -1,8 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './common/services/authentication.service';
-import { TestBed, async } from '@angular/core/testing';
-import { APP_BASE_HREF } from '@angular/common';
 
 // Modules
 import { BrowserModule } from '@angular/platform-browser';

@@ -8,16 +8,8 @@ import { RequestService } from '../request/request.service';
 export class UserComponent implements OnInit {
 
   @ViewChild('closeCreateModal',  { static: true }) closeCreateModal: ElementRef | undefined;
-  selectedCategory: any = {};
-  selectedSubCategory: any = {};
-  description = '';
   requestList = [];
-  
-  config = { 
-    notFoundText : 'Custom not found',
-    appendTo : 'body',
-    bindValue : 'value'
-  } 
+ 
   category = [ 
     { name : 'Humman resource' , icon : "fa-user"},
     { name : 'Finance' , icon : "fa-file"}, { name : 'Computers and Networks' , icon : 'fa-laptop'},
