@@ -1,13 +1,13 @@
   <div id="wrapper">
     <app-side-bar *ngIf="isLoggedIn"></app-side-bar>
     <div id="content-wrapper" class="d-flex flex-column">
-        <div id="content">
-            <app-header *ngIf="isLoggedIn"></app-header>            
+        <div id="content">            
+            <app-header *ngIf="isLoggedIn" ></app-header>            
             <div class="container-fluid">
                 <router-outlet></router-outlet>
                     <!-- Footer -->
                     <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
+                        <div class="container my-sauto">
                             <div class="copyright text-center my-auto">
                                 <span>Copyright &copy; RMN group 2022</span>
                             </div>

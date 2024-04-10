@@ -8,8 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
 
-  selectedCategory: string = ''; 
-  subCategories = [];
+  selectedCategory: string = '';   
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

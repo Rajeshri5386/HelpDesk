@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   selectedSubCategory: any = {};
   description = '';
   isLoggedIn = false;
+  Itext: any[];
   @ViewChild('closeCreateModal',  { static: true }) closeCreateModal: ElementRef | undefined;
 
   constructor(private authService: AuthenticationService, private router: Router) {
@@ -35,4 +36,6 @@ export class AppComponent implements OnInit {
     this.authService.logout();    
     this.router.navigate(['/login']);    
   }
+
+
 }

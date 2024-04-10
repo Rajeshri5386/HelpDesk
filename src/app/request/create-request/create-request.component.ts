@@ -23,7 +23,7 @@ export class CreateRequestComponent {
     'Appraisal'
   ]
 
-  @ViewChild('closeCreateModal',  { static: true }) closeCreateModal: ElementRef | undefined;
+  @ViewChild('closeCreateModal',  { static: true }) closeCreateModal: ElementRef | undefined;  
 
   constructor(
     private requestService: RequestService    

@@ -28,7 +28,7 @@ export class ListRequestComponent implements OnInit {
 
   ngOnInit(): void { 
     this.requestService.getRequests().subscribe((res) => {
-      this.requestList = res;    
+      this.requestList = res;  
     });  
   }
 }
