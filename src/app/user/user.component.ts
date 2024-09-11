@@ -1,41 +1,60 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
 import { RequestService } from '../request/request.service';
+import { ChartOptions } from 'chart.js';
+
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html'   
+  templateUrl: './user.component.html',
+  encapsulation: ViewEncapsulation.Emulated,
 })
+
 export class UserComponent implements OnInit {
+  customers: any[] = [];
 
-  @ViewChild('closeCreateModal',  { static: true }) closeCreateModal: ElementRef | undefined;
-  
- 
-  category = [ 
-    { name : 'Humman resource' , icon : "fa-user", value : "$10,000", change: 10},
-    { name : 'Finance' , icon : "fa-file", change: 5, value: 300},
-    { name : 'Computers and Networks' , icon : 'fa-laptop', value : "1000", change: -1 },
-    { name:  'Information technology' , icon: 'fa-wifi' , value: 500 , change: -10}
-  ];
+  representatives: any[] = [];
 
+  statuses: any[];
 
-  constructor(private requestService: RequestService) {
+  loading: boolean = true;
 
+  activityValues: number[] = [0, 100];
+
+  constructor(private Service: RequestService) { }
+
+  ngOnInit() {
+      this.Service.getRequests().subscribe((result: any) => {
+          this.customers = result.data;
+          this.loading = false;
+      });
+
+      this.representatives = [
+          {name: "Amy Elsner", image: 'amyelsner.png'},
+          {name: "Anna Fali", image: 'annafali.png'},
+          {name: "Asiya Javayant", image: 'asiyajavayant.png'},
+          {name: "Bernardo Dominic", image: 'bernardodominic.png'},
+          {name: "Elwin Sharvill", image: 'elwinsharvill.png'},
+          {name: "Ioni Bowcher", image: 'ionibowcher.png'},
+          {name: "Ivan Magalhaes",image: 'ivanmagalhaes.png'},
+          {name: "Onyama Limba", image: 'onyamalimba.png'},
+          {name: "Stephen Shaw", image: 'stephenshaw.png'},
+          {name: "Xuxue Feng", image: 'xuxuefeng.png'}
+      ];
+
+      this.statuses = [
+          {label: 'Unqualified', value: 'unqualified'},
+          {label: 'Qualified', value: 'qualified'},
+          {label: 'New', value: 'new'},
+          {label: 'Negotiation', value: 'negotiation'},
+          {label: 'Renewal', value: 'renewal'},
+          {label: 'Proposal', value: 'proposal'}
+      ]
   }
 
-  ngOnInit(): void {
-    this.loadRequest();  
+  clear(table: any) {
+      table.clear();
   }
 
-  requestSaved() {
-    this.closeCreateModal?.nativeElement.click();
-  }
-
-  loadRequest() {
-    this.requestService.getRequests().subscribe((res) => {
-      
-    });
 
 
-  }
-  
 }

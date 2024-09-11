@@ -12,7 +12,8 @@ export class RequestService {
   constructor(private http: HttpClient) { }
 
   getRequests(): Observable<any> {
-    return this.http.get(`${baseUrl}`);
+    return this.http.get<any>('assets/request.json')
+    
   }
   
   getRequest(id: string, page: string): Observable<any> {

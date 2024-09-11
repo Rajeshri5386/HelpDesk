@@ -3,8 +3,11 @@
 /* Importing Bootstrap SCSS file. */
 //@import '~bootstrap/scss/bootstrap';
 @import "~@ng-select/ng-select/themes/default.theme.css";
-@import 'ag-grid-community/styles/ag-grid.css';
-@import 'ag-grid-community/styles/ag-theme-alpine.css';
+// @import 'ag-grid-community/styles/ag-grid.css';
+// @import 'ag-grid-community/styles/ag-theme-alpine.css';
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/bootstrap4-light-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
 
 .card-footer {
     padding: 0.5rem 0.5rem;   
@@ -21,3 +24,6 @@
     font-size: larger;
   }
   
+  .p-element {
+    padding-top:  0px;
+  }
