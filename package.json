@@ -30,7 +30,7 @@
     "jwt-decode": "^3.1.2",
     "ng2-charts": "^3.1.2",
     "primeicons": "^7.0.0",
-    "primeng": "^16.9.1",
+    "primeng": "^17.18.12",
     "rxjs": "~7.5.0",
     "tslib": "^2.8.1",
     "zone.js": "^0.13.3"
